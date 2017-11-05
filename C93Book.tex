@@ -1,0 +1,91 @@
+\documentclass[12pt,b6book,openany]{book}
+
+\usepackage{xltxtra}
+\setmainfont[Ligatures=TeX]{IPAPMincho}
+\setsansfont{IPAPGothic}
+\setmonofont{IPAGothic}
+\XeTeXlinebreaklocale "ja"
+\usepackage{graphicx}
+%\usepackage[unicode]{hyperref}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+
+\usepackage{listings}
+\lstset{%
+  language=python,%
+  backgroundcolor={\color[gray]{.65}},%
+  basicstyle={\small},%
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},%
+%  lineskip=-0.5ex%
+}
+\usepackage{verbatim}
+
+\usepackage{ulem}
+
+\usepackage{indentfirst}
+
+% myjapanese.sty
+\RequirePackage{xltxtra}
+\def\en#1{{\engrm#1}} % 欧文フォントで出力
+% 日本語を含む段落を行分割するための設定
+\XeTeXlinebreaklocale ``ja''
+\XeTeXlinebreakskip=0pt plus 1pt minus 0.1pt
+\XeTeXlinebreakpenalty=0
+% 半角分戻る
+\def\<{\@ifstar{\zx@hwback\nobreak}{\zx@hwback\relax}}
+\def\zx@hwback#1{\leavevmode#1\hskip-.5em\relax}
+% 簡易レイアウト設定
+\RequirePackage[scale=0.8, margin=1in]{geometry}
+%\RequirePackage{indentfirst}
+\RequirePackage{setspace}
+\setstretch{1}
+\parindent=1em
+
+\newcommand{\centerimage}[1]{
+\begin{center}
+  \makebox[\textwidth]{
+    \includegraphics[width=\textwidth]{#1}
+}\end{center}}
+
+\begin{document}
+
+\frontmatter
+%% 表紙
+%%\includepdf{images/表紙.pdf}
+
+\newpage
+
+\tableofcontents
+\addtocounter{page}{-1}
+%% 
+%% \newpage
+
+\mainmatter
+
+%% \input{hajimeni}
+
+\input{atogaki}
+
+%% \null\vfill
+\section*{奥付}
+\hrule\vskip.5mm\hrule\vskip3mm
+\begin{tabular}{ll}
+  20\#\#/\#\#/\#\# & 初版発行\\
+  hash: & \href{}{\#}(の次)\\
+  著作・発行 & NoNameA 774 (nonamea774@nnn77) \\
+  サークル & いっと☆わーくす！ \\
+  メールアドレス & \href{mailto:nonamea774@gmail.com}{\nolinkurl{nonamea774@gmail.com}}\\
+  Web & \url{https://nna774.net/}\\
+  Twitter & \href{https://twitter.com/nonamea774}{@nonamea774}\\
+  GPG Key & 0x0C3E3AB2\\
+  fingerprint & 674A 287A 21D2 2431 AD8F \\
+  & D328 AEF3 C3C7 0C3E 3AB2\\
+  Keybase.io & \url{https://keybase.io/nona}\\
+\end{tabular}
+\vskip3mm\hrule\vskip3mm
+
+%%\includepdf{images/裏表紙.pdf}
+
+\end{document}
